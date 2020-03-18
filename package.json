@@ -1,0 +1,34 @@
+{
+  "name": "blog-dl",
+  "version": "0.0.1",
+  "description": "A design language for blogs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/n1tranquilla/blog-dl.git"
+  },
+  "keywords": [
+    "design",
+    "language",
+    "web",
+    "components",
+    "blogs"
+  ],
+  "author": "n1tranquilla@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/n1tranquilla/blog-dl/issues"
+  },
+  "homepage": "https://github.com/n1tranquilla/blog-dl#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.8.7",
+    "@storybook/html": "^5.3.17",
+    "babel-loader": "^8.0.6"
+  }
+}
