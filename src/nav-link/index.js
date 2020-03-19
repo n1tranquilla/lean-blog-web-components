@@ -19,8 +19,12 @@ class NavLink extends HTMLElement {
                 color: var(--bdl-text-color);
             }
             #link {
-               text-decoration: underline;
-               margin-right: calc(var(--bdl-spacing-unit) * 1rem);
+                text-decoration: underline;
+                margin-right: calc(var(--bdl-spacing-unit) * 1rem);
+            }
+            #nav-link:hover {
+                font-size: 115%;
+                color: var(--bdl-accent-color-main);
             }
         </style>
         <div id="nav-link" class="${active ? "active" : ""}">
