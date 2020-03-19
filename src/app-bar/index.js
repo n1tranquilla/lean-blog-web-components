@@ -14,14 +14,15 @@ class AppBar extends HTMLElement {
         appBar.innerHTML = `
         <style>
            nav {
-               width: 100%;
                margin-top: calc(var(--bdl-spacing-unit) * 1rem);
+               padding: calc(var(--bdl-spacing-unit) * 1rem);
 
                display: flex;
                justify-content: center;
                align-items: center;
 
-               background-color: grey;
+               background-color: var(--bdl-primary-color-light);
+               color: var(--bdl-text-color);
            } 
         </style>
         <nav><slot></slot></nav>
@@ -32,4 +33,4 @@ class AppBar extends HTMLElement {
     }
 }
 
-customElements.define('bdl-app-bar', AppBar);
+customElements.get('bdl-app-bar') || customElements.define('bdl-app-bar', AppBar);

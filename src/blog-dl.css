@@ -1,3 +1,18 @@
 :root {
     --bdl-spacing-unit: 1; 
+
+    --bdl-primary-color-main: #110222;
+    --bdl-primary-color-light: #362d4a;
+    --bdl-primary-color-dark: #000000;
+
+    --bdl-accent-color-main: #b9f250;
+    --bdl-accent-color-dark: #85bf0f;
+    --bdl-accent-color-light: #eeff82;
+
+    --bdl-text-color: #ffffff;
+    --bdl-font-family: 'Courier New';
+
+    --bdl-decoration-box-shadow: -2px 0 2px var(--bdl-accent-color-dark);
+
+    font-family: var(--bdl-font-family);
 }
