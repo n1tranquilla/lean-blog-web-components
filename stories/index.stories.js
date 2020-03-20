@@ -9,24 +9,24 @@ export default {
   title: 'Components',
 };
 
-const root = content => `<bdl-root><div style="margin-top: 12px">${content}<div></bdl-root>`
+const root = content => `<bdl-root>${content}</bdl-root>`
+const appBar = (...links) => {
+  return `<bdl-app-bar>${links}</bdl-app-bar>`
+}
 const navLink = text => `<bdl-nav-link>${text}</bdl-nav-link>`
+const previewCard = (title,text,timestamp) => `<bdl-preview-card title="${title}" text="${text}" timestamp="${timestamp}"></bdl-preview-card>`
 
-// export const HelloWorld = () => {
-//   return `<bdl-hello-world name="Nathan"></bdl-hello-world>`
-// }
 const text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
 const title="Lorem Ipsum is simply dummy"
 
+export const IndexPage = () => {
+  const navLinks = navLink('Home')+navLink('Blog')+navLink('Other')
+  const content = appBar(navLinks)+previewCard(title,text,"2019-01-01")
+  return root(content)
+}
+
 export const AppBar = () => {
-  return `<bdl-root>
-    <bdl-app-bar>
-      ${navLink('Home')}
-      ${navLink('Reviews')}
-      ${navLink('Blog')}
-    </bdl-app-bar>
-    <bdl-preview-card title="${title}" text="${text}"></bdl-preview-card>
-  </bdl-root>`
+  return appBar();
 }
 
 export const NavLink = () => {
@@ -37,5 +37,5 @@ export const NavLink = () => {
 }
 
 export const PreviewCard = () => {
-  return root(`<bdl-preview-card title="${title}" text="${text}"></bdl-preview-card>`)
+  return root(`<bdl-preview-card title="${title}" text="${text}" timestamp="2019-01-01"></bdl-preview-card>`)
 }

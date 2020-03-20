@@ -16,14 +16,15 @@ class NavLink extends HTMLElement {
         navLink.innerHTML = `
         <style>
             #nav-link {
+                font-family: var(--bdl-nav-font-family);
                 color: var(--bdl-text-color);
+                text-transform: uppercase;
             }
             #link {
                 text-decoration: underline;
                 margin-right: calc(var(--bdl-spacing-unit) * 1rem);
             }
             #nav-link:hover {
-                font-size: 115%;
                 color: var(--bdl-accent-color-main);
             }
         </style>

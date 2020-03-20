@@ -14,6 +14,8 @@ class AppBar extends HTMLElement {
         appBar.innerHTML = `
         <style>
            nav {
+               height: 2rem;
+               font-family: var(--bdl-primary-font-family);
                margin-top: calc(var(--bdl-spacing-unit) * 1rem);
                margin-bottom: calc(var(--bdl-spacing-unit) * 2rem);
                padding: calc(var(--bdl-spacing-unit) * 1rem);

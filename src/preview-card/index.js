@@ -12,46 +12,60 @@ class PreviewCard extends HTMLElement {
 
         const title = this.getAttribute('title');
         const text = this.getAttribute('text');
+        const timestamp = this.getAttribute('timestamp')
 
         // creating the inner HTML of the editable list element
         previewCard.innerHTML = `
         <style>
             #preview-card-container {
-                margin: 0 calc(var(--bdl-spacing-unit) * 2rem);
-                padding: 0 calc(var(--bdl-spacing-unit) * 2rem);
+                padding: 0 calc(var(--bdl-spacing-unit) * 4rem);
                 display: flex;
                 flex-direction: column;
                 align-items: stretch;
                 overflow-y:hidden;
-                position:relative;
                 color: var(--bdl-text-color);
             }
             #preview-card {
+                position: relative;
                 display: flex;
                 flex-direction: column;
                 align-items:stretch;
             }
-            #preview-card span {
-                font-size: 125%;
+            #row1 {
                 margin-bottom: 1rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: baseline;
+            }
+            #title {
+                font-family: var(--bdl-primary-font-family);
+                font-size: 125%;
+            }
+            #timestamp {
+                font-family: var(--bdl-teriary-font-family);
+                color: var(--bdl-primary-color-light);
+            }
+            #row2 {
+                font-family: var(--bdl-secondary-font-family);
             }
             #preview-card:before {
-                content: '#####################################';
+                content: '# # # # # # # # # # # # # # # # # #';
+                white-space: pre;
                 position: absolute;
-                top: -50%;
-                left: 0;
+                top: -1rem;
+                left: -2rem;
                 transform: rotate(90deg);
                 transform-origin: bottom left;
                 color: var(--bdl-text-color);
             }
-            #preview-card-container:hover #preview-card:before {
-                color: var(--bdl-accent-color-main);
-            }
         </style>
         <div id="preview-card-container">
             <div id="preview-card">
-                <span>${title}</span>
-                <div>${text}</div>
+                <div id="row1">
+                    <span id="title">${title}</span>
+                    <span id="timestamp">${timestamp}</span>
+                </div>
+                <div id="row2">${text}</div>
             </div>
         <div>
       `;
@@ -68,8 +82,12 @@ class PreviewCard extends HTMLElement {
         this.getAttribute('text') || '';
     }
 
+    get timestamp(){
+        this.getAttribute('timestamp') || '';
+    }
+
     static get observedAttributes() {
-        return ['text','title']
+        return ['text','title','timestamp']
     }
 }
 

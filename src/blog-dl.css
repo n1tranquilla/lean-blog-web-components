@@ -5,14 +5,15 @@
     --bdl-primary-color-light: #362d4a;
     --bdl-primary-color-dark: #000000;
 
-    --bdl-accent-color-main: #b9f250;
-    --bdl-accent-color-dark: #85bf0f;
-    --bdl-accent-color-light: #eeff82;
+    --bdl-accent-color-main: #daa520;
+    --bdl-accent-color-dark: #ffd656;
+    --bdl-accent-color-light: #a47700;
 
     --bdl-text-color: #ffffff;
-    --bdl-font-family: 'Courier New';
+    --bdl-nav-font-family: 'Courier New', monospace;
+    --bdl-primary-font-family: 'Ubuntu Mono', sans-serif;
+    --bdl-secondary-font-family: 'Courier Prime', monospace;
+    --bld-tertiary-font-family: 'Cormorant Garamond', serif;
 
     --bdl-decoration-box-shadow: -2px 0 2px var(--bdl-accent-color-dark);
-
-    font-family: var(--bdl-font-family);
 }
