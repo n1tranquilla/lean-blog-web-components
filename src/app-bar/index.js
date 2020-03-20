@@ -15,6 +15,7 @@ class AppBar extends HTMLElement {
         <style>
            nav {
                margin-top: calc(var(--bdl-spacing-unit) * 1rem);
+               margin-bottom: calc(var(--bdl-spacing-unit) * 2rem);
                padding: calc(var(--bdl-spacing-unit) * 1rem);
 
                display: flex;
