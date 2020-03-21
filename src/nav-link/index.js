@@ -24,12 +24,15 @@ class NavLink extends HTMLElement {
                 text-decoration: underline;
                 margin-right: calc(var(--bdl-spacing-unit) * 1rem);
             }
+            #link:before {
+                content: var(--bdl-special-character);
+            }
             #nav-link:hover {
                 color: var(--bdl-accent-color-main);
             }
         </style>
         <div id="nav-link" class="${active ? "active" : ""}">
-            <span id="decoration">#</span><span id="link"><slot></slot></span>
+            <span id="link"><slot></slot></span>
         <div>
       `;
 

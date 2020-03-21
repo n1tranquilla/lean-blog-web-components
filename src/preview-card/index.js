@@ -18,6 +18,7 @@ class PreviewCard extends HTMLElement {
         previewCard.innerHTML = `
         <style>
             #preview-card-container {
+                margin: calc(var(--bdl-spacing-unit) * 1rem) 0;
                 padding: 0 calc(var(--bdl-spacing-unit) * 4rem);
                 display: flex;
                 flex-direction: column;
@@ -44,12 +45,54 @@ class PreviewCard extends HTMLElement {
             #timestamp {
                 font-family: var(--bdl-teriary-font-family);
                 color: var(--bdl-primary-color-light);
+                flex-shrink: 0;
             }
             #row2 {
                 font-family: var(--bdl-secondary-font-family);
             }
             #preview-card:before {
-                content: '# # # # # # # # # # # # # # # # # #';
+                content: var(--bdl-special-character) 
+                var(--bdl-special-character) 
+                var(--bdl-special-character) 
+                var(--bdl-special-character) 
+                var(--bdl-special-character) 
+                var(--bdl-special-character) 
+                var(--bdl-special-character) 
+                var(--bdl-special-character) 
+                var(--bdl-special-character) 
+                var(--bdl-special-character) 
+                var(--bdl-special-character) 
+                var(--bdl-special-character)
+                var(--bdl-special-character) 
+                var(--bdl-special-character) 
+                var(--bdl-special-character) 
+                var(--bdl-special-character) 
+                var(--bdl-special-character) 
+                var(--bdl-special-character) 
+                var(--bdl-special-character) 
+                var(--bdl-special-character) 
+                var(--bdl-special-character) 
+                var(--bdl-special-character) 
+                var(--bdl-special-character) 
+                var(--bdl-special-character) 
+                var(--bdl-special-character) 
+                var(--bdl-special-character) 
+                var(--bdl-special-character) 
+                var(--bdl-special-character) 
+                var(--bdl-special-character) 
+                var(--bdl-special-character) 
+                var(--bdl-special-character) 
+                var(--bdl-special-character) 
+                var(--bdl-special-character) 
+                var(--bdl-special-character) 
+                var(--bdl-special-character) 
+                var(--bdl-special-character) 
+                var(--bdl-special-character) 
+                var(--bdl-special-character) 
+                var(--bdl-special-character) 
+                var(--bdl-special-character) 
+                var(--bdl-special-character) 
+                var(--bdl-special-character);
                 white-space: pre;
                 position: absolute;
                 top: -1rem;

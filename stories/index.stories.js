@@ -37,5 +37,8 @@ export const NavLink = () => {
 }
 
 export const PreviewCard = () => {
-  return root(`<bdl-preview-card title="${title}" text="${text}" timestamp="2019-01-01"></bdl-preview-card>`)
+  return root(`
+    <bdl-preview-card title="${title}" text="${text}" timestamp="2019-01-01"></bdl-preview-card>
+    <bdl-preview-card title="${title}" text="${text}" timestamp="2019-01-01"></bdl-preview-card>
+  `)
 }

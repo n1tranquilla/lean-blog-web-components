@@ -15,5 +15,7 @@
     --bdl-secondary-font-family: 'Courier Prime', monospace;
     --bld-tertiary-font-family: 'Cormorant Garamond', serif;
 
+    --bdl-special-character: ' |';
+
     --bdl-decoration-box-shadow: -2px 0 2px var(--bdl-accent-color-dark);
 }
