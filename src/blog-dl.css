@@ -5,10 +5,9 @@
     --bdl-accent-color: #00ff00;
 
     --bdl-text-color: #000000;
-    --bdl-nav-font-family: 'Courier New', monospace;
-    --bdl-primary-font-family: 'Ubuntu', sans-serif;
-    --bdl-secondary-font-family: 'Courier Prime', monospace;
-    --bld-tertiary-font-family: 'Cormorant Garamond', serif;
+    --bdl-nav-font-family: 'Ubuntu', sans-serif;
+    --bdl-title-font-family: 'Ubuntu', sans-serif;
+    --bdl-body-font-family: 'Open Sans', sans-serif;
 
     --bdl-decoration-box-shadow: -2px 0 2px var(--bdl-accent-color-dark);
 }

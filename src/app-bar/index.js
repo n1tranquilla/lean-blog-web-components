@@ -24,9 +24,9 @@ class AppBar extends HTMLElement {
         // creating the inner HTML of the editable list element
         appBar.innerHTML = `
         <style>
-           nav {
-               font-family: var(--bdl-primary-font-family);
-               padding: calc(var(--bdl-spacing-unit) * 1rem);
+            header {
+               font-family: var(--bdl-nav-font-family);
+               padding: calc(var(--bdl-spacing-unit) * 1rem) 0;
 
                display: flex;
                justify-content: space-between;
@@ -34,8 +34,8 @@ class AppBar extends HTMLElement {
                flex-wrap: wrap;
 
                background-color: var(--bdl-primary-color);
-           }
-           #links {
+            }
+            nav {
                height: 100%;
                display: flex;
                justify-content: space-between;
@@ -50,8 +50,8 @@ class AppBar extends HTMLElement {
             }
             a {
                margin: 0.25rem;
-               padding: 0.25rem;
-               padding-left: 0.75rem;
+               padding: 0.5rem 0;
+               margin-right: 1rem;
                color: var(--bdl-text-color);
                text-decoration: none;
                text-transform: capitalize;
@@ -70,11 +70,11 @@ class AppBar extends HTMLElement {
                 font-weigh: bold;
             } 
         </style>
-        <nav>
+        <header>
            <a id="logo-link" href="${linkPairs[0][1]}"><slot></slot></a>
            <div id="spacer"></div>
-           <div id="links">${aTags.join('')}</div>
-        </nav>
+           <nav>${aTags.join('')}</nav>
+        </header>
       `;
 
         // appending the container to the shadow DOM
