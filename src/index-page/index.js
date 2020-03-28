@@ -39,10 +39,9 @@ class IndexPage extends HTMLElement {
             a {
                 font-family: var(--lbwc-title-font-family);
                 text-decoration: none;
-                border-bottom: 1px solid transparent;
             }
             a:hover{
-                border-bottom: 1px solid var(--lbwc-accent-color);
+                text-decoration: underline;
             }
             .meta {
                 opacity: 0.75;
@@ -52,7 +51,8 @@ class IndexPage extends HTMLElement {
             .description {
                 white-space: nowrap;
                 text-overflow: ellipsis;
-                width: 200px;
+                width: 100%;
+                max-width: 400px;
                 display: block;
                 overflow: hidden;
             }
