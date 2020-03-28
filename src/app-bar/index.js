@@ -25,15 +25,15 @@ class AppBar extends HTMLElement {
         appBar.innerHTML = `
         <style>
             header {
-               font-family: var(--bdl-nav-font-family);
-               padding: calc(var(--bdl-spacing-unit) * 1rem) 0;
+               font-family: var(--lbwc-nav-font-family);
+               padding: calc(var(--lbwc-spacing-unit) * 1rem) 0;
 
                display: flex;
                justify-content: space-between;
                align-items: center;
                flex-wrap: wrap;
 
-               background-color: var(--bdl-primary-color);
+               background-color: var(--lbwc-primary-color);
             }
             nav {
                height: 100%;
@@ -52,18 +52,18 @@ class AppBar extends HTMLElement {
                margin: 0.25rem;
                padding: 0.5rem 0;
                margin-right: 1rem;
-               color: var(--bdl-text-color);
+               color: var(--lbwc-text-color);
                text-decoration: none;
                text-transform: capitalize;
                border-bottom: 2px solid transparent;
                position: relative;
             }
             a:hover {
-                border-bottom: 2px solid var(--bdl-accent-color);
+                border-bottom: 2px solid var(--lbwc-accent-color);
             }
             a:active:before {
                 content: "〉";
-                color: var(--bdl-accent-color);
+                color: var(--lbwc-accent-color);
                 position: absolute;
                 left: -0.5rem;
                 top:0;
@@ -82,4 +82,4 @@ class AppBar extends HTMLElement {
     }
 }
 
-customElements.get('bdl-app-bar') || customElements.define('bdl-app-bar', AppBar);
+customElements.get('lbwc-app-bar') || customElements.define('lbwc-app-bar', AppBar);

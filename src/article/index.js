@@ -17,8 +17,7 @@ class Article extends HTMLElement {
         article.innerHTML = `
         <style>
             article {
-                max-width: 600px;
-                color: var(--bdl-text-color);
+                color: var(--lbwc-text-color);
             }
             #article-header {
                 width: 100%;
@@ -28,7 +27,7 @@ class Article extends HTMLElement {
                 flex-wrap: wrap;
             }
             h1 {
-                font-family: var(--bdl-title-font-family);
+                font-family: var(--lbwc-title-font-family);
             }
             span {
                 opacity: 0.5;
@@ -48,4 +47,4 @@ class Article extends HTMLElement {
     }
 }
 
-customElements.get('bdl-article') || customElements.define('bdl-article', Article);
+customElements.get('lbwc-article') || customElements.define('lbwc-article', Article);

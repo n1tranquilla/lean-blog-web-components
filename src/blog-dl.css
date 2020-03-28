@@ -1,17 +1,18 @@
 :root {
-    --bdl-spacing-unit: 1; 
+    --lbwc-spacing-unit: 1; 
 
-    --bdl-primary-color: #FFFFFF;
-    --bdl-accent-color: #00ff00;
+    --lbwc-primary-color: #FFFFFF;
+    --lbwc-accent-color: #00ff00;
 
-    --bdl-text-color: #000000;
-    --bdl-nav-font-family: 'Ubuntu', sans-serif;
-    --bdl-title-font-family: 'Ubuntu', sans-serif;
-    --bdl-body-font-family: 'Open Sans', sans-serif;
+    --lbwc-text-color: #000000;
+    --lbwc-nav-font-family: 'Ubuntu', sans-serif;
+    --lbwc-title-font-family: 'Ubuntu', sans-serif;
+    --lbwc-body-font-family: 'Open Sans', sans-serif;
 
-    --bdl-decoration-box-shadow: -2px 0 2px var(--bdl-accent-color-dark);
+    --lbwc-decoration-box-shadow: -2px 0 2px var(--lbwc-accent-color-dark);
 }
 
 * {
     box-sizing: border-box;
+    font-family: var(--lbwc-body-font-family);
 }
