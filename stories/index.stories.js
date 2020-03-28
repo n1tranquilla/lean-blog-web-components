@@ -10,7 +10,7 @@ export default {
 
 export const NavBar = () => {
   return `<lbwc-app-bar 
-    mult=5
+    mult=4
     nav-links="home:/index.html;about:/about.html;review:/review.html;contact:/contact.html">
     <img src="${logo}" height="22" width="210" style="padding-top: 2.5px"/>
   </lbwc-app-bar>`
@@ -63,6 +63,10 @@ export const IndexPage = () => {
 
 export const DemoArticlePage = () => {
   return basePage(NavBar() + Article());
+}
+
+export const DemoIndexPage = () => {
+  return basePage(NavBar() + IndexPage());
 }
 
 

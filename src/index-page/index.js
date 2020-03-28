@@ -28,13 +28,15 @@ class IndexPage extends HTMLElement {
         indexPage.innerHTML = `
         <style>
             h1 {
+                font-size: 1.5rem;
                 font-family: var(--lbwc-title-font-family);
             }
             ul {
-                list-style-type: circle;
+                list-style-type: none;
+                padding-left: 0;
             }
             li {
-                margin: 0.5rem;
+                margin: calc(var(--lbwc-spacing-unit)*0.5rem) 0;
             }
             a {
                 font-family: var(--lbwc-title-font-family);
@@ -46,7 +48,6 @@ class IndexPage extends HTMLElement {
             .meta {
                 opacity: 0.75;
                 font-size: 0.7rem;
-                padding-left: 0.75rem;
             }
             .description {
                 white-space: nowrap;

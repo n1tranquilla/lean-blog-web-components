@@ -26,7 +26,7 @@ class AppBar extends HTMLElement {
         <style>
             header {
                font-family: var(--lbwc-nav-font-family);
-               padding: calc(var(--lbwc-spacing-unit) * 1rem) 0;
+               padding: 0;
 
                display: flex;
                justify-content: space-between;
@@ -49,14 +49,15 @@ class AppBar extends HTMLElement {
                 border-bottom: none;
             }
             a {
-               margin: 0.25rem;
-               padding: 0.5rem 0;
-               margin-right: 1rem;
-               color: var(--lbwc-text-color);
-               text-decoration: none;
-               text-transform: capitalize;
-               border-bottom: 2px solid transparent;
-               position: relative;
+                font-size: 0.85rem;
+                margin: calc(var(--lbwc-spacing-unit)*0.25rem);
+                padding: calc(var(--lbwc-spacing-unit)*0.5rem) 0;
+                margin-right: calc(var(--lbwc-spacing-unit)*1rem);
+                color: var(--lbwc-text-color);
+                text-decoration: none;
+                text-transform: capitalize;
+                border-bottom: 2px solid transparent;
+                position: relative;
             }
             a:hover {
                 border-bottom: 2px solid var(--lbwc-accent-color);
@@ -65,7 +66,7 @@ class AppBar extends HTMLElement {
                 content: "〉";
                 color: var(--lbwc-accent-color);
                 position: absolute;
-                left: -0.5rem;
+                left: calc(var(--lbwc-spacing-unit)*-0.5rem);
                 top:0;
                 font-weigh: bold;
             } 

@@ -30,7 +30,8 @@ class Article extends HTMLElement {
                 font-family: var(--lbwc-title-font-family);
             }
             span {
-                opacity: 0.5;
+                opacity: 0.75;
+                font-size: 0.7rem;
             }
         </style>
         <article>
