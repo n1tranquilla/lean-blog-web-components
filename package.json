@@ -1,5 +1,5 @@
 {
-  "name": "blog-dl",
+  "name": "lean-blog-web-components",
   "version": "0.0.1",
   "description": "A design language for blogs",
   "main": "index.js",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/n1tranquilla/blog-dl.git"
+    "url": "git+https://github.com/n1tranquilla/lean-blog-web-components.git"
   },
   "keywords": [
     "design",
@@ -22,9 +22,9 @@
   "author": "n1tranquilla@gmail.com",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/n1tranquilla/blog-dl/issues"
+    "url": "https://github.com/n1tranquilla/lean-blog-web-components/issues"
   },
-  "homepage": "https://github.com/n1tranquilla/blog-dl#readme",
+  "homepage": "https://github.com/n1tranquilla/lean-blog-web-components#readme",
   "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.8.7",

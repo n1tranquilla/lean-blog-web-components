@@ -1,4 +1,4 @@
-import '../src/blog-dl.css'
+import '../src/lean-blog-web-components.css'
 import '../src/app-bar'
 import '../src/article'
 import '../src/index-page'
