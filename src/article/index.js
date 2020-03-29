@@ -2,7 +2,7 @@ class Article extends HTMLElement {
     constructor() {
         super();
 
-        const shadow = this.attachShadow({ mode: 'open' });
+        this.attachShadow({ mode: 'open' });
 
         // creating a container for the editable-list component
         const article = document.createElement('div');
@@ -44,7 +44,46 @@ class Article extends HTMLElement {
       `;
 
         // appending the container to the shadow DOM
-        shadow.appendChild(article);
+        this.shadowRoot.appendChild(article);
+
+        this.titleEl = this.shadowRoot.getElementById("article-header").children[0];
+        this.dateEl = this.shadowRoot.getElementById("article-header").children[1];
+    }
+
+    get title(){
+        return this.getAttribute('title') || '';
+    }
+
+    set title(value) {
+        this.setAttribute('title',value)
+    }
+
+    get date() {
+        return this.getAttribute('date') || ''
+    }
+
+    set date(value) {
+        this.setAttribute('date',value)
+    }
+
+    static get observedAttributes() {
+        return ['title', 'date'];
+    }
+
+    attributeChangedCallback(name, oldValue, newValue) {
+        switch (name) {
+            case 'title': {
+                this.titleEl.innerHTML = newValue;
+                break;
+            }
+            case 'date': {
+                this.dateEl.innerHTML = newValue;
+                break;
+            }
+            default: {
+                break;
+            }
+        }
     }
 }
 

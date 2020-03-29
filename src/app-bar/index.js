@@ -86,8 +86,16 @@
             return this.getAttribute('nav-links') || ''
         }
 
+        set navLinks(value) {
+            this.setAttribute('nav-links',value);
+        }
+
         get mult() {
             return this.getAttribute('mult') || 5;
+        }
+
+        set mult(value) {
+            this.setAttribute('mult',value)
         }
 
         static get observedAttributes() {
@@ -109,6 +117,10 @@
             switch (name) {
                 case 'nav-links': {
                     this.setNavLinks(newValue);
+                    this.updateFromMult();
+                    break;
+                }
+                case 'mult': {
                     this.updateFromMult();
                     break;
                 }
