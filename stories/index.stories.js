@@ -2,6 +2,7 @@ import '../src/lean-blog-web-components.css'
 import '../src/app-bar'
 import '../src/article'
 import '../src/index-page'
+import '../src/footer'
 import logo from '../assets/logo2.png'
 
 export default {
@@ -61,8 +62,12 @@ export const IndexPage = () => {
   return `<lbwc-index-page title="Posts" group-by="year" posts="${postsAttr}"></lbwc-index-page>`
 }
 
+export const Footer = () => {
+  return `<lbwc-footer attribution="nathantranquilla.me © 2020"></lbwc-footer>`
+}
+
 export const DemoArticlePage = () => {
-  return basePage(NavBar() + Article());
+  return basePage(NavBar() + Article() + Footer());
 }
 
 export const DemoIndexPage = () => {

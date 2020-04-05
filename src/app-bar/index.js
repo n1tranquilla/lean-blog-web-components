@@ -29,7 +29,6 @@
             appBar.innerHTML = `
                 <style>
                     header {
-                        font-family: var(--lbwc-nav-font-family);
                         padding: 0;
 
                         display: flex;
@@ -53,6 +52,7 @@
                         border-bottom: none;
                     }
                     a {
+                        font-family: var(--lbwc-nav-font-family);
                         font-size: 0.85rem;
                         margin: calc(var(--lbwc-spacing-unit)*0.25rem);
                         padding: calc(var(--lbwc-spacing-unit)*0.5rem) 0;
