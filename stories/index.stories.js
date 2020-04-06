@@ -3,6 +3,7 @@ import '../src/app-bar'
 import '../src/article'
 import '../src/index-page'
 import '../src/footer'
+import '../src/a'
 import logo from '../assets/logo2.png'
 
 export default {
@@ -64,6 +65,10 @@ export const IndexPage = () => {
 
 export const Footer = () => {
   return `<lbwc-footer attribution="nathantranquilla.me © 2020"></lbwc-footer>`
+}
+
+export const Link = () => {
+  return `Lorem ipsum dolor sit amet, consectetur adipiscing elit. <lbwc-a href="http://localhost:6006/?path=/story/components--link">Quisque turpis</lbwc-a> nunc, efficitur non tempor ac, eleifend et metus. Praesent at.`
 }
 
 export const DemoArticlePage = () => {
