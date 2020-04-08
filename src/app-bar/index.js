@@ -18,12 +18,11 @@
             // adding a class to our container for the sake of clarity
             appBar.classList.add('root');
 
-            const mult = this.getAttribute('mult') || 4;
             const navLinks = this.getAttribute('nav-links') || '';
+            const mobile = this.hasAttribute('mobile') || false
             const aTags = convertNavString(navLinks);
 
             this.setNavLinks = this.setNavLinks.bind(this);
-            this.updateFromMult = this.updateFromMult.bind(this);
 
             // creating the inner HTML of the editable list element
             appBar.innerHTML = `
@@ -35,18 +34,12 @@
                         justify-content: space-between;
                         align-items: center;
                         flex-wrap: wrap;
-
                         background-color: var(--lbwc-primary-color);
                     }
                     nav {
                         height: 100%;
                         display: flex;
                         justify-content: space-between;
-                        flex-grow: 1;
-                        max-width: ${mult * aTags.length}rem;
-                    }
-                    #spacer {
-                        width: ${mult / 2}rem;
                     }
                     #logo-link {
                         border-bottom: none;
@@ -66,11 +59,23 @@
                     a:hover {
                         border-bottom: 2px solid var(--lbwc-accent-color);
                     }
+                    .left,.right {
+                        flex: 1;
+                        flex-basis: 50%;
+                        display: flex;
+                    }
+                    .left {
+                        justify-content: ${mobile ? 'center' : 'flex-start'};
+                    }
+                    .right {
+                        justify-content: ${mobile ? 'space-between' : 'flex-end'};
+                    }
                 </style>
                 <header>
-                    <a id="logo-link" href="/"><slot></slot></a>
-                    <div id="spacer"></div>
-                    <nav>${aTags.join("")}</nav>
+                    <div class="left">
+                        <a id="logo-link" href="/"><slot></slot></a>
+                    </div>
+                    <nav class="right">${aTags.join("")}</nav>
                 </header>
             `;
 
@@ -79,7 +84,8 @@
 
             this.nav = this.shadowRoot.querySelector('nav');
             this.logoLink = this.shadowRoot.getElementById('logo-link');
-            this.spacer = this.shadowRoot.getElementById('spacer');
+            this.leftEl = this.shadowRoot.querySelector('.left');
+            this.rightEl = this.shadowRoot.querySelector('.right');
         }
 
         get navLinks() {
@@ -90,16 +96,20 @@
             this.setAttribute('nav-links',value);
         }
 
-        get mult() {
-            return this.getAttribute('mult') || 5;
+        get mobile() {
+            return this.hasAttribute('mobile') || false
         }
 
-        set mult(value) {
-            this.setAttribute('mult',value)
+        set mobile(isMobile) {
+            if (isMobile) {
+                this.setAttribute('mobile','')
+            } else {
+                this.removeAttribute('mobile')
+            }
         }
 
         static get observedAttributes() {
-            return ['nav-links']
+            return ['nav-links', 'mobile']
         }
 
         setNavLinks(str) {
@@ -107,21 +117,25 @@
             this.nav.innerHTML = navLinks.join("");
         }
 
-        updateFromMult() {
-            const navLinks = convertNavString(this.navLinks);
-            this.nav.setAttribute('style',`max-width: ${this.mult*navLinks.length}rem`);
-            this.spacer.setAttribute('style',`width: ${this.mult / 2}rem`);
+        setMobile(isMobile) {
+            this.mobile(isMobile);
+            if (isMobile) {
+                this.leftEl.setAttribute('style','justify-content: center');
+                this.rightEl.setAttribute('style','justify-content: space-between');
+            } else {
+                this.leftEl.setAttribute('style','justify-content: flex-start');
+                this.rightEl.setAttribute('style','justify-content: flex-end');
+            }
         }
 
         attributeChangedCallback(name, oldValue, newValue) {
             switch (name) {
                 case 'nav-links': {
                     this.setNavLinks(newValue);
-                    this.updateFromMult();
                     break;
                 }
-                case 'mult': {
-                    this.updateFromMult();
+                case 'mobile': {
+                    this.setMobile(this.hasAttribute('mobile'))
                     break;
                 }
                 default: {

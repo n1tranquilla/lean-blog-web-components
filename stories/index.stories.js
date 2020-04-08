@@ -10,9 +10,10 @@ export default {
   title: 'Components',
 };
 
-export const NavBar = () => {
+export const NavBar = (mobile=false) => {
   return `<lbwc-app-bar 
     mult=4
+    ${mobile ? 'mobile' : ''}
     nav-links="home:/index.html;about:/about.html;review:/review.html;contact:/contact.html">
     <img src="${logo}" height="22" width="210" style="padding-top: 2.5px"/>
   </lbwc-app-bar>`
@@ -77,6 +78,10 @@ export const DemoArticlePage = () => {
 
 export const DemoIndexPage = () => {
   return basePage(NavBar() + IndexPage());
+}
+
+export const MobileNavBar = () => {
+  return NavBar(true)
 }
 
 
