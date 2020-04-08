@@ -2,6 +2,7 @@
 
     const convertNavString = str => {
         return str.split(';')
+            .filter(s=>s.trim().length > 0)
             .map(pair => pair.split(':'))
             .map(([name,href]) => `<a href="${href}">${name}</a>`)
     }
