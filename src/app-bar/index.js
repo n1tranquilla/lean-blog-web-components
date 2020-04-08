@@ -118,7 +118,7 @@
         }
 
         setMobile(isMobile) {
-            this.mobile(isMobile);
+            this.mobile = isMobile;
             if (isMobile) {
                 this.leftEl.setAttribute('style','justify-content: center');
                 this.rightEl.setAttribute('style','justify-content: space-between');
