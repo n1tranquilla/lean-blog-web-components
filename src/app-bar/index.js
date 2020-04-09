@@ -69,7 +69,7 @@
                         justify-content: ${mobile ? 'center' : 'flex-start'};
                     }
                     .right {
-                        justify-content: ${mobile ? 'space-between' : 'flex-end'};
+                        justify-content: ${mobile ? 'space-around' : 'flex-end'};
                     }
                 </style>
                 <header>
@@ -119,10 +119,9 @@
         }
 
         setMobile(isMobile) {
-            this.mobile = isMobile;
             if (isMobile) {
                 this.leftEl.setAttribute('style','justify-content: center');
-                this.rightEl.setAttribute('style','justify-content: space-between');
+                this.rightEl.setAttribute('style','justify-content: space-around');
             } else {
                 this.leftEl.setAttribute('style','justify-content: flex-start');
                 this.rightEl.setAttribute('style','justify-content: flex-end');
