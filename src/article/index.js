@@ -60,7 +60,7 @@
                     a {
                         font-size: 0.7rem;
                         padding: 3px 10px;
-                        background-color: #B5B5B5;
+                        background-color: #f5f5f5;
                         border-radius: 3px;
                         margin: 0 0.25rem;
                     }
