@@ -54,16 +54,19 @@
                         font-family: var(--lbwc-title-font-family);
                     }
                     #date {
-                        opacity: 0.75;
+                        color: #B5B5B5;
                         font-size: 0.7rem;
                     }
-                    .tag {
+                    a {
                         font-size: 0.7rem;
                         padding: 3px 10px;
-                        background-color: #f3f3f3;
-                        border-radius: 2px;
+                        background-color: #B5B5B5;
+                        border-radius: 3px;
                         margin: 0 0.25rem;
-                        color: var(--lbwc-accent-color);
+                    }
+                    a:hover,a:active {
+                        background-color: black;
+                        color:var(--lbwc-accent-color);
                     }
                 </style>
                 <article>
