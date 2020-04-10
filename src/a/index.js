@@ -17,21 +17,8 @@
             // creating the inner HTML of the editable list element
             a.innerHTML = `
                 <style>
-                    a {
-                        border-bottom: 2px solid transparent;
-                        position: relative;
-                    }
                     a:active,a:hover {
-                        background-color: var(--lbwc-accent-color);
-                        text-decoration: none;
-                        border-bottom-color: black;
-                        color: black;
-                    }
-                    a:visited::after {
-                        content: 'test';
-                        font-size: 1.5rem;
-                        position: absolute;
-                        right: 1rem;
+                        color: var(--lbwc-accent-color);
                     }
                 </style>
                 <a id="link" href="${href}"><slot></slot></a>
