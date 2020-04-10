@@ -24,7 +24,7 @@
                         justify-content: center;
                         align-items: center;
                         min-height: calc(var(--lbwc-spacing-unit)*3rem);
-                        background-color: rgba(var(--lbwc-accent-color-rgb), 0.2);
+                        background-color: var(--lbwc-background-accent);
                     }
                     #attribution {
                         font-family: var(--lbwc-body-font-family);

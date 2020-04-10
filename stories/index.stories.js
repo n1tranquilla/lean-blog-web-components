@@ -4,7 +4,10 @@ import '../src/article'
 import '../src/index-page'
 import '../src/footer'
 import '../src/a'
+import '../src/img-block'
+
 import logo from '../assets/logo2.png'
+import img from './img_4.jpeg'
 
 export default {
   title: 'Components',
@@ -70,6 +73,10 @@ export const Footer = () => {
 
 export const Link = () => {
   return `Lorem ipsum dolor sit amet, consectetur adipiscing elit. <lbwc-a href="http://localhost:6006/?path=/story/components--link">Quisque turpis</lbwc-a> nunc, efficitur non tempor ac, eleifend et metus. Praesent at.`
+}
+
+export const ImgBlock = () => {
+  return `scroll to lazy load image...<div style="padding-top: 100vh;"><lbwc-img-block src="${img}" height="500" width="350"></lbwc-img-block></div>`
 }
 
 export const DemoArticlePage = () => {
