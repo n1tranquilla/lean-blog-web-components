@@ -19,7 +19,7 @@
             // creating the inner HTML of the editable list element
             div.innerHTML = `
                 <style>
-                    div {
+                    #container {
                         display: flex; 
                         justify-content: center; 
                         width: 100%; 
@@ -28,7 +28,7 @@
                         margin: 1rem 0;
                     }
                 </style>
-                <div>
+                <div id="container">
                     <img id="img" src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" 
                         data-src="${src}" height="${height}" width="${width}">
                 </div>
