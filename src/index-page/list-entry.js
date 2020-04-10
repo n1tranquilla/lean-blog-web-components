@@ -29,7 +29,7 @@
                         opacity: 0.75;
                         font-size: 0.7rem;
                     }
-                    .description {
+                    #teaser {
                         white-space: nowrap;
                         text-overflow: ellipsis;
                         width: 100%;
