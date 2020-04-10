@@ -17,6 +17,9 @@
             // creating the inner HTML of the editable list element
             a.innerHTML = `
                 <style>
+                    a {
+                        font-family: var(--lbwc-body-font-family);
+                    }
                     a:active,a:hover {
                         color: var(--lbwc-accent-color);
                     }

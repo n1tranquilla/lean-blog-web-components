@@ -11,7 +11,7 @@
             },{})
         })        
 
-    const createTagsHtml = t=>`<a class="tag" href="${t.href}">${t.name}</a>`
+    const createTagsHtml = t=>`<lbwc-tag href="${t.href}" name="${t.name}"></lbwc-tag>`
 
     class Article extends HTMLElement {
 
@@ -57,16 +57,8 @@
                         color: #B5B5B5;
                         font-size: 0.7rem;
                     }
-                    a {
-                        font-size: 0.7rem;
-                        padding: 3px 10px;
-                        background-color: #f5f5f5;
-                        border-radius: 3px;
-                        margin: 0 0.25rem;
-                    }
-                    a:hover,a:active {
-                        background-color: black;
-                        color:var(--lbwc-accent-color);
+                    #tags { 
+                        display: flex;
                     }
                 </style>
                 <article>
@@ -75,9 +67,9 @@
                     </div>
                     <div id="article-subheader">
                         <span id="date">${date}</span>
-                        <span>${tags.map(createTagsHtml).join('')}</span>
+                        <span id="tags">${tags.map(createTagsHtml).join('')}</span>
                     </div>
-                    <slot></slot>
+                    <div><slot></slot></div>
                 </article>
                 `;
 

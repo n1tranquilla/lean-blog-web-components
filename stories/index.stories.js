@@ -2,9 +2,11 @@ import '../src/lean-blog-web-components.css'
 import '../src/app-bar'
 import '../src/article'
 import '../src/index-page'
+import '../src/index-page/list-entry'
 import '../src/footer'
 import '../src/a'
 import '../src/img-block'
+import '../src/tag'
 
 import logo from '../assets/logo2.png'
 import img from './img_4.jpeg'
@@ -12,6 +14,10 @@ import img from './img_4.jpeg'
 export default {
   title: 'Components',
 };
+
+export const Tag = () => {
+  return `<lbwc-tag href="/test/test/test" name="blog-tag"></lbwc-tag>`
+}
 
 export const NavBar = (mobile=false) => {
   return `<lbwc-app-bar 
@@ -45,26 +51,22 @@ const basePage = (content) => {
 }
 
 const posts = [
-  {title: 'This is a test title', href: '/this-is-my-article.html', date: '2020-01-01', teaser: 'This is a little story about a boy who cried wolf. One day he found himself' },
-  {title: 'This is another test', href: '/this-is-my-article.html', date: '2019-11-01' },
-  {title: 'This is a test title', href: '/this-is-my-article.html', date: '2019-11-01' },
-  {title: 'This is another test', href: '/this-is-my-article.html', date: '2019-09-01' },
-  {title: 'This is a test title', href: '/this-is-my-article.html', date: '2019-08-01' },
-  {title: 'This is another test', href: '/this-is-my-article.html', date: '2019-07-01' },
-  {title: 'This is a test title', href: '/this-is-my-article.html', date: '2019-08-01' },
-  {title: 'This is another test', href: '/this-is-my-article.html', date: '2019-05-01' }
+  {title: 'This is a test title', href: '/this-is-my-article.html', date: '2020-01-01', tags: [`<lbwc-tag href="/test/test/test" name="blog-tag"></lbwc-tag>`,`<lbwc-tag href="/test/test/test" name="reviews"></lbwc-tag>`,`<lbwc-tag href="/test/test/test" name="covid-19"></lbwc-tag>`], teaser: 'This is a little story about a boy who cried wolf. One day he found himself' },
+  {title: 'This is another test', href: '/this-is-my-article.html', date: '2019-11-01', tags: [`<lbwc-tag href="/test/test/test" name="blog-tag"></lbwc-tag>`] },
+  {title: 'This is a test title', href: '/this-is-my-article.html', date: '2019-11-01', tags:[] },
+  {title: 'This is another test', href: '/this-is-my-article.html', date: '2019-09-01', tags:[] },
+  {title: 'This is a test title', href: '/this-is-my-article.html', date: '2019-08-01', tags:[] },
+  {title: 'This is another test', href: '/this-is-my-article.html', date: '2019-07-01', tags:[] },
+  {title: 'This is a test title', href: '/this-is-my-article.html', date: '2019-08-01', tags:[] },
+  {title: 'This is another test', href: '/this-is-my-article.html', date: '2019-05-01', tags:[] }
 ]
-const postsAttr = posts.reduce((agg,post) => {
-  const keys = Object.keys(post)
-  keys.forEach(key => {
-    agg += `${key}: ${post[key]};`
-  })
-  agg += ";"
-  return agg
-},'')
+
 
 export const IndexPage = () => {
-  return `<lbwc-index-page title="Posts" group-by="year" posts="${postsAttr}"></lbwc-index-page>`
+  return `<lbwc-index-page 
+    title="Posts">
+    ${posts.map(p=>`<lbwc-list-entry href="${p.href}" title="${p.title}" date="${p.date}" teaser="${p.teaser}">${p.tags.join('')}</lbwc-list-entry>`).join('')}
+  </lbwc-index-page>`
 }
 
 export const Footer = () => {
