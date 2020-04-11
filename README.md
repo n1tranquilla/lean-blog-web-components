@@ -22,6 +22,8 @@ Components are added to [stories](https://github.com/n1tranquilla/lean-blog-web-
 Components need only be imported to be used.
 
 ### Weback:
+
+Example App Bar use:
 ```javascript
 import 'lean-blog-web-components/src/app-bar'
 ```
