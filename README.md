@@ -31,4 +31,4 @@ and in the browser
 ```
 
 ## API
-[API](https://github.com/n1tranquilla/lean-blog-web-components/blob/master/src/API.md)
+For detailed instructions on how to use the components, see component [API](https://github.com/n1tranquilla/lean-blog-web-components/blob/master/src/API.md)
