@@ -1,12 +1,5 @@
 (function () {
 
-    const convertNavString = str => {
-        return str.split(';')
-            .filter(s=>s.trim().length > 0)
-            .map(pair => pair.split(':'))
-            .map(([name,href]) => `<a href="${href}">${name}</a>`)
-    }
-
     class AppBar extends HTMLElement {
         constructor() {
             super();
@@ -19,18 +12,13 @@
             // adding a class to our container for the sake of clarity
             appBar.classList.add('root');
 
-            const navLinks = this.getAttribute('nav-links') || '';
-            const mobile = this.hasAttribute('mobile') || false
-            const aTags = convertNavString(navLinks);
-
-            this.setNavLinks = this.setNavLinks.bind(this);
+            const mobile = this.hasAttribute('mobile') || false;
 
             // creating the inner HTML of the editable list element
             appBar.innerHTML = `
                 <style>
                     header {
                         padding: 0;
-
                         display: flex;
                         justify-content: space-between;
                         align-items: center;
@@ -44,21 +32,6 @@
                     }
                     #logo-link {
                         border-bottom: none;
-                    }
-                    a {
-                        font-family: var(--lbwc-nav-font-family);
-                        font-size: 0.85rem;
-                        margin: calc(var(--lbwc-spacing-unit)*0.25rem);
-                        padding: calc(var(--lbwc-spacing-unit)*0.5rem) 0;
-                        margin-right: calc(var(--lbwc-spacing-unit)*1rem);
-                        color: var(--lbwc-text-color);
-                        text-decoration: none;
-                        text-transform: capitalize;
-                        border-bottom: 2px solid transparent;
-                        position: relative;
-                    }
-                    a:hover {
-                        border-bottom: 2px solid var(--lbwc-accent-color);
                     }
                     .left,.right {
                         flex: 1;
@@ -74,27 +47,18 @@
                 </style>
                 <header>
                     <div class="left">
-                        <a id="logo-link" href="/"><slot></slot></a>
+                        <a id="logo-link" href="/"><slot name="logo"></slot></a>
                     </div>
-                    <nav class="right">${aTags.join("")}</nav>
+                    <nav class="right"><slot name="nav-links"></slot></nav>
                 </header>
             `;
 
             // appending the container to the shadow DOM
             this.shadowRoot.appendChild(appBar);
 
-            this.nav = this.shadowRoot.querySelector('nav');
             this.logoLink = this.shadowRoot.getElementById('logo-link');
             this.leftEl = this.shadowRoot.querySelector('.left');
             this.rightEl = this.shadowRoot.querySelector('.right');
-        }
-
-        get navLinks() {
-            return this.getAttribute('nav-links') || ''
-        }
-
-        set navLinks(value) {
-            this.setAttribute('nav-links',value);
         }
 
         get mobile() {
@@ -110,12 +74,7 @@
         }
 
         static get observedAttributes() {
-            return ['nav-links', 'mobile']
-        }
-
-        setNavLinks(str) {
-            const navLinks = convertNavString(str);
-            this.nav.innerHTML = navLinks.join("");
+            return ['mobile']
         }
 
         setMobile(isMobile) {
@@ -130,10 +89,6 @@
 
         attributeChangedCallback(name, oldValue, newValue) {
             switch (name) {
-                case 'nav-links': {
-                    this.setNavLinks(newValue);
-                    break;
-                }
                 case 'mobile': {
                     this.setMobile(this.hasAttribute('mobile'))
                     break;

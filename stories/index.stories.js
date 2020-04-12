@@ -7,6 +7,7 @@ import '../src/footer'
 import '../src/a'
 import '../src/img-block'
 import '../src/tag'
+import '../src/nav-link'
 
 import logo from '../assets/logo2.png'
 import img from './img_4.jpeg'
@@ -20,11 +21,12 @@ export const Tag = () => {
 }
 
 export const NavBar = (mobile=false) => {
-  return `<lbwc-app-bar 
-    mult=4
-    ${mobile ? 'mobile' : ''}
-    nav-links="home:/index.html;about:/about.html;review:/review.html;contact:/contact.html">
-    <img src="${logo}" height="22" width="210" style="padding-top: 2.5px"/>
+  return `<lbwc-app-bar ${mobile===true ? 'mobile' : ''}>
+    <img slot="logo" src="${logo}" height="22" width="210" style="padding-top: 2.5px"/>
+    <lbwc-nav-link slot="nav-links" href="/home">Home</lbwc-nav-link>
+    <lbwc-nav-link slot="nav-links" href="/posts">Posts</lbwc-nav-link>
+    <lbwc-nav-link slot="nav-links" href="/reviews">Reviews</lbwc-nav-link>
+    <lbwc-nav-link slot="nav-links" href="/about">About</lbwc-nav-link>
   </lbwc-app-bar>`
 }
 
