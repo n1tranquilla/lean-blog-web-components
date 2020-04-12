@@ -1,6 +1,6 @@
 {
   "name": "lean-blog-web-components",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "description": "A design language for blogs",
   "main": "index.js",
   "scripts": {
