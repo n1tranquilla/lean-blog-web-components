@@ -38,6 +38,7 @@
                         flex-basis: 50%;
                         display: flex;
                         min-height: calc(var(--lbwc-spacing-unit)*3rem);
+                        align-items: center;
                     }
                     .left {
                         justify-content: ${mobile ? 'center' : 'flex-start'};
