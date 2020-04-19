@@ -31,7 +31,7 @@ export const NavBar = (mobile=false) => {
 }
 
 export const Article = () => {
-  return `<lbwc-article title="Lorem ipsum mel et ifpum monseret" date="2019-01-01" tags="name:test;href:/test/test/test;;name:test2;href:/test2/test2/test2;;">
+  return `<lbwc-article title="Lorem ipsum mel et ifpum monseret" date="2019-01-01" tags="name:test;href:/test/test/test;;name:test2;href:/test2/test2/test2;;name:religion;href:/test;;name:book reviews:/test;;name:religion;href:/test;;name:book reviews:/test;;name:religion;href:/test;;name:book reviews:/test;;">
     <p>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras hendrerit mauris sit amet pulvinar volutpat. Ut sit amet felis orci. Nam euismod, libero at ultrices maximus, nunc urna luctus urna, ut interdum neque lorem ac sapien. Donec maximus, leo sit amet ultricies porta, ante justo vestibulum nulla, vel fermentum arcu lorem in elit. Nam ut ultricies sem. Pellentesque facilisis commodo vestibulum. Sed varius, eros non eleifend rhoncus, lacus arcu tristique neque, id ultricies urna tortor ac est. Ut purus est, ultrices vitae efficitur a, consequat dictum arcu. Suspendisse a nunc arcu. Donec non libero placerat, placerat odio sit amet, consequat metus. Quisque rhoncus est diam, tempus commodo dui tincidunt a. Sed aliquet dictum enim non pretium. Maecenas gravida orci vel lacus laoreet, non aliquam est venenatis. Cras pharetra lacinia orci, a vehicula justo elementum nec.
     </p>

@@ -49,6 +49,7 @@
                         display:flex;
                         justify-content: space-between;
                         align-items: baseline;
+                        flex-wrap: wrap;
                     }
                     h1 {
                         font-family: var(--lbwc-title-font-family);

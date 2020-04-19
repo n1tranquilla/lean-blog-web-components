@@ -25,6 +25,8 @@
                         background-color: #f5f5f5;
                         border-radius: 3px;
                         margin-right: 0.5rem;
+                        flex-shrink: 0;
+                        white-space: nowrap;
                     }
                     a:hover,a:active {
                         background-color: black;
