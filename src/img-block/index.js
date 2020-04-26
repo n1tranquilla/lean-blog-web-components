@@ -21,16 +21,25 @@
                 <style>
                     #container {
                         display: flex; 
+                        flex-direction: column;
                         justify-content: center; 
+                        align-items: center;
                         width: 100%; 
                         padding: 1rem 0; 
                         background-color: var(--lbwc-background-accent-color,#f5f5f5); 
                         margin: 1rem 0;
                     }
+                    #caption {
+                        margin: 0.5rem 0;
+                        font-size: 0.75rem;
+                        font-family: var(--lbwc-caption-font-family);
+                        max-width: ${width}px;
+                    }
                 </style>
                 <div id="container">
                     <img id="img" src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" 
                         data-src="${src}" height="${height}" width="${width}">
+                    <span id="caption"><slot></slot><span>
                 </div>
             `;
 
@@ -38,6 +47,7 @@
             this.shadowRoot.appendChild(div);
 
             this.imgEl = this.shadowRoot.getElementById("img")
+            this.captionEl = this.shadowRoot.getElementById("caption")
         }
 
         get src() {
@@ -78,6 +88,7 @@
                 }
                 case "width": {
                     this.imgEl.setAttribute("width", newValue)
+                    this.captionEl.setAttribute("style",`max-width: ${newValue}px`);
                 }
                 default: {
                     break;

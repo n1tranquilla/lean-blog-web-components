@@ -80,7 +80,10 @@ export const Link = () => {
 }
 
 export const ImgBlock = () => {
-  return `scroll to lazy load image...<div style="padding-top: 100vh;"><lbwc-img-block src="${img}" height="500" width="350"></lbwc-img-block></div>`
+  return `scroll to lazy load image...<div style="padding-top: 100vh;">
+  <lbwc-img-block src="${img}" height="500" width="350"></lbwc-img-block>
+  <lbwc-img-block src="${img}" height="500" width="350">This is pic of us with masks on!! Making this caption even longer to see what happens</lbwc-img-block>
+  </div>`
 }
 
 export const DemoArticlePage = () => {

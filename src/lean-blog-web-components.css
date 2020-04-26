@@ -9,6 +9,7 @@
     --lbwc-text-color: #000000;
     --lbwc-nav-font-family: 'Ubuntu', sans-serif;
     --lbwc-title-font-family: 'Ubuntu', sans-serif;
+    --lbwc-caption-font-family: 'Ubuntu', sans-serif;
     --lbwc-body-font-family: 'Open Sans', sans-serif;
 
     --lbwc-decoration-box-shadow: -2px 0 2px var(--lbwc-accent-color-dark);
